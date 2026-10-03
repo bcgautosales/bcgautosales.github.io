@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 
@@ -672,9 +671,9 @@
 
         .red-social img {
 
-            width: 25px;
+            width: 31px;
 
-            height: 25px;
+            height: 31px;
 
             object-fit: contain;
 
@@ -696,18 +695,18 @@
 
         .redes-hero .red-social {
 
-            width: 48px;
+            width: 56px;
 
-            height: 48px;
+            height: 56px;
 
         }
 
 
         .redes-hero .red-social img {
 
-            width: 23px;
+            width: 31px;
 
-            height: 23px;
+            height: 31px;
 
         }
 
@@ -2200,9 +2199,9 @@
 
             .redes-hero .red-social {
 
-                width: 46px;
+                width: 54px;
 
-                height: 46px;
+                height: 54px;
 
             }
 
@@ -2583,6 +2582,162 @@
             }
 
         }
+
+
+        /* =========================================================
+           MEJORA VISUAL DE BOTONES E INTERACCIONES
+        ========================================================= */
+
+        .hero-button,
+        .consultar,
+        .galeria-whatsapp {
+            position: relative;
+            overflow: hidden;
+            border-radius: 999px;
+            isolation: isolate;
+            transition: transform .28s ease, box-shadow .28s ease,
+                background .28s ease, color .28s ease;
+        }
+
+        .hero-button {
+            background: linear-gradient(120deg, #b88b18 0%, #f0d778 48%, #c9a227 100%);
+            border: 1px solid rgba(255, 225, 133, .85);
+            box-shadow: 0 8px 24px rgba(201, 162, 39, .22),
+                inset 0 1px 0 rgba(255, 255, 255, .35);
+        }
+
+        .hero-button::before,
+        .consultar::before,
+        .galeria-whatsapp::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -130%;
+            width: 70%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .32), transparent);
+            transform: skewX(-22deg);
+            transition: left .65s ease;
+            z-index: -1;
+        }
+
+        .hero-button:hover::before,
+        .consultar:hover::before,
+        .galeria-whatsapp:hover::before {
+            left: 150%;
+        }
+
+        .hero-button:hover,
+        .consultar:hover,
+        .galeria-whatsapp:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 30px rgba(201, 162, 39, .28);
+        }
+
+        .hero-button:active,
+        .consultar:active,
+        .galeria-whatsapp:active,
+        .filtro:active {
+            transform: scale(.97);
+        }
+
+        .filtro {
+            position: relative;
+            overflow: hidden;
+            border-radius: 999px;
+            padding: 13px 25px;
+            font-weight: 700;
+            background: linear-gradient(145deg, rgba(255, 255, 255, .035), rgba(255, 255, 255, .01));
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, .045);
+        }
+
+        .filtro:hover,
+        .filtro.activo {
+            background: linear-gradient(120deg, #b88b18, #f0d778 55%, #c9a227);
+            color: #080808;
+            border-color: #e4c45c;
+            transform: translateY(-3px);
+            box-shadow: 0 9px 22px rgba(201, 162, 39, .22),
+                inset 0 1px 0 rgba(255, 255, 255, .35);
+        }
+
+        .consultar {
+            background: linear-gradient(120deg, rgba(201, 162, 39, .12), rgba(228, 196, 92, .04));
+            font-weight: 800;
+            letter-spacing: 1.1px;
+        }
+
+        .consultar:hover {
+            background: linear-gradient(120deg, #b88b18, #f0d778 55%, #c9a227);
+            color: #080808;
+        }
+
+        .galeria-whatsapp {
+            border-radius: 999px;
+            box-shadow: 0 8px 22px rgba(37, 211, 102, .18);
+        }
+
+        .whatsapp-flotante {
+            transition: transform .28s ease, box-shadow .28s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, .45), 0 0 0 6px rgba(37, 211, 102, .08);
+        }
+
+        .whatsapp-flotante:hover {
+            transform: translateY(-4px) scale(1.08);
+            box-shadow: 0 13px 30px rgba(37, 211, 102, .28), 0 0 0 8px rgba(37, 211, 102, .10);
+        }
+
+        .red-social {
+            width: 58px;
+            height: 58px;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06), 0 7px 18px rgba(0, 0, 0, .25);
+        }
+
+        .red-social img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .redes-hero .red-social {
+            width: 58px;
+            height: 58px;
+        }
+
+        .redes-hero .red-social img {
+            width: 32px;
+            height: 32px;
+        }
+
+        @media (max-width: 650px) {
+            .redes-hero .red-social {
+                width: 56px;
+                height: 56px;
+            }
+
+            .redes-hero .red-social img {
+                width: 31px;
+                height: 31px;
+            }
+
+            .filtro {
+                padding: 12px 21px;
+            }
+
+            .hero-button,
+            .consultar,
+            .galeria-whatsapp {
+                min-height: 49px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .hero-button::before,
+            .consultar::before,
+            .galeria-whatsapp::before {
+                display: none;
+            }
+        }
     </style>
 
 </head>
@@ -2705,16 +2860,6 @@
                 <img src="img/redes/insta.png" alt="Instagram">
 
             </a>
-
-
-            <a class="red-social" href="https://www.facebook.com/galaxi.com2004" target="_blank"
-                rel="noopener noreferrer" aria-label="Facebook">
-
-                <img src="img/redes/facebook.png" alt="Facebook">
-
-            </a>
-
-
         </div>
 
     </section>
@@ -2827,15 +2972,6 @@
                 Camionetas
 
             </button>
-
-
-            <button class="filtro" onclick="filtrar('Camiones', this)">
-
-                Camiones
-
-            </button>
-
-
         </div>
 
 
@@ -3106,7 +3242,7 @@
         </div>
 
 
-        <a class="hero-button" href="https://wa.me/19086617638" target="_blank" rel="noopener noreferrer">
+        <a class="hero-button" href="https://wa.me/19084040704" target="_blank" rel="noopener noreferrer">
 
             CONTACTAR POR WHATSAPP →
 
@@ -3162,16 +3298,6 @@
                 <img src="img/redes/insta.png" alt="Instagram">
 
             </a>
-
-
-            <a class="red-social" href="https://www.facebook.com/TU_PAGINA" target="_blank" rel="noopener noreferrer"
-                aria-label="Facebook">
-
-                <img src="img/redes/facebook.png" alt="Facebook">
-
-            </a>
-
-
         </div>
 
 
@@ -3194,7 +3320,7 @@
          WHATSAPP FLOTANTE
     ========================================================= -->
 
-    <a href="https://wa.me/19086617638" target="_blank" rel="noopener noreferrer" class="whatsapp-flotante"
+    <a href="https://wa.me/19084040704" target="_blank" rel="noopener noreferrer" class="whatsapp-flotante"
         aria-label="Contactar por WhatsApp">
 
         ☎
@@ -3287,10 +3413,10 @@
             IMPORTANTE:
 
             Número:
-            +1 (908) 661-7638
+            +1 (908) 404-0704
 
             WhatsApp necesita:
-            19086617638
+            19084040704
 
             SIN:
             +
@@ -3300,7 +3426,7 @@
         */
 
         const NUMERO_WHATSAPP =
-            "19086617638";
+            "19084040704";
 
 
 
@@ -3343,7 +3469,7 @@
                 ],
 
 
-                ciudad: "Cali",
+                ciudad: "Sunrrise Florida",
 
                 kilometraje: "152.000 MI",
 
@@ -3387,7 +3513,7 @@
                 ],
 
 
-                ciudad: "Medellín",
+                ciudad: "Sunrrise Florida",
 
                 kilometraje: "132.000 MI",
 
@@ -3395,7 +3521,7 @@
 
                 combustible: "Gasolina",
 
-                transmision: "Manual"
+                transmision: "Automático"
 
             },
 
@@ -3439,7 +3565,7 @@
                 ],
 
 
-                ciudad: "Bogotá",
+                ciudad: "Sunrrise Florida",
 
                 kilometraje: "107.000 MI",
 
@@ -3447,7 +3573,7 @@
 
                 combustible: "Gasolina",
 
-                transmision: "Manual"
+                transmision: "Automático"
 
             }
 
@@ -4213,4 +4339,3 @@
 </body>
 
 </html>
-```
