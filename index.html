@@ -1,0 +1,3308 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BCG AUTOSALES | Vehículos Exclusivos</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --negro: #050505;
+            --negro2: #090909;
+            --negro3: #111111;
+
+            --dorado: #c9a227;
+            --dorado-claro: #e4c45c;
+
+            --blanco: #ffffff;
+            --gris: #a8a8a8;
+            --gris-claro: #d0d0d0;
+
+            --borde: rgba(201, 162, 39, .25);
+
+            --transicion: .3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+
+            background:
+                radial-gradient(circle at top,
+                    #17130a 0%,
+                    #080808 30%,
+                    #050505 70%);
+
+            color: var(--blanco);
+
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        header {
+
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+
+            min-height: 82px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 12px 5%;
+
+            background:
+                rgba(5, 5, 5, .90);
+
+            border-bottom:
+                1px solid rgba(201, 162, 39, .20);
+
+            backdrop-filter:
+                blur(14px);
+
+            box-shadow:
+                0 8px 30px rgba(0, 0, 0, .25);
+        }
+
+
+        .logo img {
+
+            width: 145px;
+
+            display: block;
+
+            transition:
+                transform var(--transicion),
+                filter var(--transicion);
+        }
+
+
+        .logo img:hover {
+
+            transform: scale(1.03);
+
+            filter:
+                drop-shadow(0 0 10px rgba(201, 162, 39, .25));
+        }
+
+
+        nav {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 30px;
+        }
+
+
+        nav a {
+
+            position: relative;
+
+            font-size: 12px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.5px;
+
+            color: #d5d5d5;
+
+            transition:
+                color var(--transicion);
+        }
+
+
+        nav a::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -8px;
+
+            width: 0;
+            height: 1px;
+
+            background:
+                var(--dorado);
+
+            transition:
+                width var(--transicion);
+        }
+
+
+        nav a:hover {
+
+            color:
+                var(--dorado-claro);
+        }
+
+
+        nav a:hover::after {
+
+            width: 100%;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+
+            min-height:
+                calc(100vh - 82px);
+
+            display: flex;
+
+            align-items: center;
+
+            position: relative;
+
+            padding:
+                90px 5%;
+
+            background:
+
+                linear-gradient(90deg,
+                    rgba(0, 0, 0, .96) 0%,
+                    rgba(0, 0, 0, .78) 38%,
+                    rgba(0, 0, 0, .30) 100%),
+
+                url("img/portada.jpg") center/cover no-repeat;
+        }
+
+
+        .hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 5%;
+            bottom: 35px;
+
+            width: 80px;
+            height: 2px;
+
+            background:
+                linear-gradient(90deg,
+                    var(--dorado),
+                    transparent);
+        }
+
+
+        .hero-content {
+
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 720px;
+        }
+
+
+        .hero small {
+
+            display: inline-block;
+
+            color:
+                var(--dorado-claro);
+
+            letter-spacing:
+                5px;
+
+            text-transform:
+                uppercase;
+
+            font-size:
+                12px;
+
+            font-weight:
+                bold;
+
+            margin-bottom:
+                12px;
+        }
+
+
+        .hero h1 {
+
+            font-size:
+                clamp(48px, 7vw, 86px);
+
+            line-height:
+                .94;
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                -3px;
+
+            margin:
+                12px 0 25px;
+        }
+
+
+        .hero h1 span {
+
+            display: block;
+
+            color:
+                var(--dorado);
+        }
+
+
+        .hero p {
+
+            max-width:
+                600px;
+
+            color:
+                #d0d0d0;
+
+            line-height:
+                1.8;
+
+            font-size:
+                17px;
+
+            margin-bottom:
+                35px;
+        }
+
+
+        .hero-button {
+
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            gap:
+                10px;
+
+            padding:
+                16px 27px;
+
+            background:
+                linear-gradient(135deg,
+                    var(--dorado),
+                    var(--dorado-claro));
+
+            color:
+                #050505;
+
+            font-weight:
+                800;
+
+            font-size:
+                12px;
+
+            letter-spacing:
+                1.5px;
+
+            border:
+                1px solid var(--dorado);
+
+            box-shadow:
+                0 10px 30px rgba(201, 162, 39, .15);
+
+            transition:
+                transform var(--transicion),
+                box-shadow var(--transicion);
+        }
+
+
+        .hero-button:hover {
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 15px 35px rgba(201, 162, 39, .28);
+        }
+
+
+        /* =====================================================
+           TITULOS GENERALES
+        ===================================================== */
+
+        .seccion-titulo {
+
+            text-align:
+                center;
+
+            max-width:
+                850px;
+
+            margin:
+                0 auto 50px;
+        }
+
+
+        .seccion-titulo small {
+
+            color:
+                var(--dorado);
+
+            letter-spacing:
+                4px;
+
+            text-transform:
+                uppercase;
+
+            font-size:
+                11px;
+
+            font-weight:
+                bold;
+        }
+
+
+        .seccion-titulo h2 {
+
+            position:
+                relative;
+
+            display:
+                inline-block;
+
+            font-size:
+                clamp(30px, 4vw, 43px);
+
+            margin-top:
+                12px;
+
+            letter-spacing:
+                -1px;
+        }
+
+
+        .seccion-titulo h2::after {
+
+            content: "";
+
+            display:
+                block;
+
+            width:
+                55px;
+
+            height:
+                2px;
+
+            background:
+                var(--dorado);
+
+            margin:
+                14px auto 0;
+        }
+
+
+        .seccion-titulo p {
+
+            color:
+                var(--gris);
+
+            margin-top:
+                18px;
+
+            line-height:
+                1.7;
+        }
+
+
+        /* =====================================================
+           VIDEO
+        ===================================================== */
+
+        .video-presentacion {
+
+            padding:
+                85px 5%;
+
+            background:
+                linear-gradient(180deg,
+                    #080808,
+                    #0b0b0b);
+
+            border-bottom:
+                1px solid var(--borde);
+        }
+
+
+        .video-contenedor {
+
+            max-width:
+                1100px;
+
+            margin:
+                auto;
+        }
+
+
+        .video-titulo {
+
+            text-align:
+                center;
+
+            margin-bottom:
+                30px;
+        }
+
+
+        .video-titulo small {
+
+            color:
+                var(--dorado);
+
+            letter-spacing:
+                3px;
+
+            text-transform:
+                uppercase;
+
+            font-size:
+                11px;
+
+            font-weight:
+                bold;
+        }
+
+
+        .video-titulo h2 {
+
+            font-size:
+                clamp(27px, 4vw, 36px);
+
+            margin-top:
+                10px;
+        }
+
+
+        .video-titulo h2 span {
+
+            color:
+                var(--dorado);
+        }
+
+
+        .video-titulo p {
+
+            color:
+                var(--gris);
+
+            margin-top:
+                10px;
+        }
+
+
+        .video-presentacion video {
+
+            width:
+                100%;
+
+            display:
+                block;
+
+            max-height:
+                620px;
+
+            object-fit:
+                contain;
+
+            background:
+                #000;
+
+            border:
+                1px solid var(--borde);
+
+            border-radius:
+                14px;
+
+            box-shadow:
+                0 25px 60px rgba(0, 0, 0, .60);
+        }
+
+
+        /* =====================================================
+           POR QUE BCG
+        ===================================================== */
+
+        .ventajas {
+
+            padding:
+                95px 5%;
+
+            background:
+                #070707;
+
+            border-bottom:
+                1px solid #171717;
+        }
+
+
+        .ventajas-grid {
+
+            max-width:
+                1150px;
+
+            margin:
+                auto;
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap:
+                18px;
+        }
+
+
+        .ventaja {
+
+            position:
+                relative;
+
+            padding:
+                35px 25px;
+
+            background:
+                linear-gradient(145deg,
+                    #121212,
+                    #090909);
+
+            border:
+                1px solid #202020;
+
+            text-align:
+                center;
+
+            transition:
+                transform var(--transicion),
+                border-color var(--transicion),
+                box-shadow var(--transicion);
+        }
+
+
+        .ventaja:hover {
+
+            transform:
+                translateY(-7px);
+
+            border-color:
+                rgba(201, 162, 39, .55);
+
+            box-shadow:
+                0 18px 40px rgba(0, 0, 0, .4);
+        }
+
+
+        .ventaja-icono {
+
+            width:
+                58px;
+
+            height:
+                58px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            margin:
+                0 auto 20px;
+
+            border:
+                1px solid var(--borde);
+
+            border-radius:
+                50%;
+
+            color:
+                var(--dorado);
+
+            font-size:
+                23px;
+        }
+
+
+        .ventaja h3 {
+
+            font-size:
+                17px;
+
+            margin-bottom:
+                10px;
+        }
+
+
+        .ventaja p {
+
+            color:
+                var(--gris);
+
+            font-size:
+                13px;
+
+            line-height:
+                1.7;
+        }
+
+
+        /* =====================================================
+           INVENTARIO
+        ===================================================== */
+
+        .inventario {
+
+            padding:
+                100px 5%;
+
+            background:
+                radial-gradient(circle at top,
+                    #11100b,
+                    #090909 45%,
+                    #050505);
+        }
+
+
+        .filtros {
+
+            display:
+                flex;
+
+            justify-content:
+                center;
+
+            flex-wrap:
+                wrap;
+
+            gap:
+                10px;
+
+            margin-bottom:
+                45px;
+        }
+
+
+        .filtro {
+
+            padding:
+                12px 22px;
+
+            background:
+                transparent;
+
+            color:
+                #aaa;
+
+            border:
+                1px solid #2a2a2a;
+
+            cursor:
+                pointer;
+
+            text-transform:
+                uppercase;
+
+            font-size:
+                11px;
+
+            letter-spacing:
+                1px;
+
+            transition:
+                all var(--transicion);
+        }
+
+
+        .filtro:hover,
+        .filtro.activo {
+
+            background:
+                var(--dorado);
+
+            color:
+                #000;
+
+            border-color:
+                var(--dorado);
+
+            box-shadow:
+                0 8px 20px rgba(201, 162, 39, .15);
+        }
+
+
+        /* =====================================================
+           GRID VEHICULOS
+        ===================================================== */
+
+        .vehiculos-grid {
+
+            max-width:
+                1200px;
+
+            margin:
+                auto;
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(auto-fill,
+                    minmax(280px, 350px));
+
+            gap:
+                28px;
+
+            justify-content:
+                center;
+        }
+
+
+        .vehiculo-card {
+
+            background:
+                linear-gradient(145deg,
+                    #141414,
+                    #0b0b0b);
+
+            border:
+                1px solid #222;
+
+            overflow:
+                hidden;
+
+            transition:
+                transform var(--transicion),
+                border-color var(--transicion),
+                box-shadow var(--transicion);
+        }
+
+
+        .vehiculo-card:hover {
+
+            transform:
+                translateY(-7px);
+
+            border-color:
+                rgba(201, 162, 39, .65);
+
+            box-shadow:
+                0 20px 45px rgba(0, 0, 0, .55);
+        }
+
+
+        .vehiculo-imagen-contenedor {
+
+            position:
+                relative;
+
+            height:
+                250px;
+
+            overflow:
+                hidden;
+
+            cursor:
+                pointer;
+
+            background:
+                #000;
+        }
+
+
+        .vehiculo-foto {
+
+            width:
+                100%;
+
+            height:
+                100%;
+
+            object-fit:
+                cover;
+
+            transition:
+                transform .6s ease;
+        }
+
+
+        .vehiculo-card:hover .vehiculo-foto {
+
+            transform:
+                scale(1.055);
+        }
+
+
+        .contador-fotos {
+
+            position:
+                absolute;
+
+            right:
+                12px;
+
+            bottom:
+                12px;
+
+            background:
+                rgba(0, 0, 0, .78);
+
+            padding:
+                7px 11px;
+
+            border:
+                1px solid rgba(255, 255, 255, .08);
+
+            border-radius:
+                5px;
+
+            font-size:
+                11px;
+
+            color:
+                #eee;
+        }
+
+
+        .vehiculo-info {
+
+            padding:
+                23px;
+        }
+
+
+        .vehiculo-tipo {
+
+            color:
+                var(--dorado);
+
+            font-size:
+                10px;
+
+            text-transform:
+                uppercase;
+
+            letter-spacing:
+                2px;
+
+            font-weight:
+                bold;
+        }
+
+
+        .vehiculo-info h3 {
+
+            font-size:
+                23px;
+
+            margin:
+                8px 0;
+        }
+
+
+        .precio {
+
+            color:
+                var(--dorado-claro);
+
+            font-size:
+                24px;
+
+            font-weight:
+                bold;
+
+            padding-bottom:
+                18px;
+
+            margin-bottom:
+                18px;
+
+            border-bottom:
+                1px solid #222;
+        }
+
+
+        .detalles {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap:
+                11px;
+
+            color:
+                #999;
+
+            font-size:
+                12px;
+
+            margin-bottom:
+                20px;
+        }
+
+
+        .detalles span {
+
+            white-space:
+                nowrap;
+
+            overflow:
+                hidden;
+
+            text-overflow:
+                ellipsis;
+        }
+
+
+        .consultar {
+
+            display:
+                block;
+
+            text-align:
+                center;
+
+            padding:
+                13px;
+
+            background:
+                rgba(201, 162, 39, .04);
+
+            border:
+                1px solid var(--dorado);
+
+            color:
+                var(--dorado);
+
+            font-size:
+                11px;
+
+            font-weight:
+                bold;
+
+            letter-spacing:
+                1px;
+
+            transition:
+                all var(--transicion);
+        }
+
+
+        .consultar:hover {
+
+            background:
+                var(--dorado);
+
+            color:
+                #000;
+        }
+
+
+        .sin-resultados {
+
+            grid-column:
+                1 / -1;
+
+            text-align:
+                center;
+
+            color:
+                var(--gris);
+
+            padding:
+                40px;
+        }
+
+
+        /* =====================================================
+           MARCAS
+        ===================================================== */
+
+        .marcas {
+
+            padding:
+                95px 5%;
+
+            background:
+                #070707;
+
+            border-top:
+                1px solid #151515;
+
+            border-bottom:
+                1px solid #151515;
+        }
+
+
+        .marcas-grid {
+
+            max-width:
+                1100px;
+
+            margin:
+                45px auto 0;
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap:
+                14px;
+        }
+
+
+        .marca {
+
+            padding:
+                27px 15px;
+
+            text-align:
+                center;
+
+            border:
+                1px solid #222;
+
+            background:
+                #0c0c0c;
+
+            color:
+                #999;
+
+            font-size:
+                13px;
+
+            letter-spacing:
+                1px;
+
+            transition:
+                all var(--transicion);
+        }
+
+
+        .marca:hover {
+
+            color:
+                var(--dorado);
+
+            border-color:
+                var(--dorado);
+
+            background:
+                #101010;
+
+            transform:
+                translateY(-3px);
+        }
+
+
+        /* =====================================================
+           NOSOTROS
+        ===================================================== */
+
+        .nosotros {
+
+            position:
+                relative;
+
+            padding:
+                105px 5%;
+
+            background:
+                linear-gradient(135deg,
+                    #0b0b0b,
+                    #11100b);
+
+            overflow:
+                hidden;
+        }
+
+
+        .nosotros::before {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            width:
+                300px;
+
+            height:
+                300px;
+
+            border:
+                1px solid rgba(201, 162, 39, .10);
+
+            border-radius:
+                50%;
+
+            top:
+                -150px;
+
+            right:
+                -100px;
+        }
+
+
+        .nosotros-contenido {
+
+            position:
+                relative;
+
+            z-index:
+                1;
+
+            max-width:
+                850px;
+
+            margin:
+                auto;
+
+            text-align:
+                center;
+        }
+
+
+        .nosotros-contenido h2 {
+
+            font-size:
+                clamp(30px, 4vw, 43px);
+
+            margin-bottom:
+                25px;
+        }
+
+
+        .nosotros-contenido h2 span {
+
+            color:
+                var(--dorado);
+        }
+
+
+        .nosotros-contenido p {
+
+            color:
+                var(--gris);
+
+            line-height:
+                1.9;
+
+            font-size:
+                16px;
+        }
+
+
+        /* =====================================================
+           CONTACTO
+        ===================================================== */
+
+        .contacto {
+
+            padding:
+                90px 5%;
+
+            text-align:
+                center;
+
+            background:
+                #050505;
+
+            border-top:
+                1px solid #151515;
+        }
+
+
+        .contacto h2 {
+
+            font-size:
+                clamp(30px, 4vw, 43px);
+
+            margin-bottom:
+                15px;
+        }
+
+
+        .contacto p {
+
+            color:
+                var(--gris);
+
+            margin-bottom:
+                30px;
+        }
+
+
+        /* =====================================================
+           FOOTER / REDES
+        ===================================================== */
+
+        footer {
+
+            padding:
+                65px 5% 30px;
+
+            background:
+                #020202;
+
+            border-top:
+                1px solid var(--borde);
+
+            text-align:
+                center;
+        }
+
+
+        .footer-logo img {
+
+            width:
+                145px;
+
+            margin:
+                0 auto 20px;
+
+            display:
+                block;
+
+            opacity:
+                .95;
+        }
+
+
+        .footer-frase {
+
+            color:
+                #888;
+
+            font-size:
+                13px;
+
+            margin-bottom:
+                30px;
+        }
+
+
+        .redes-titulo {
+
+            color:
+                var(--dorado);
+
+            text-transform:
+                uppercase;
+
+            letter-spacing:
+                3px;
+
+            font-size:
+                11px;
+
+            margin-bottom:
+                20px;
+        }
+
+
+        .redes-sociales {
+
+            display:
+                flex;
+
+            justify-content:
+                center;
+
+            align-items:
+                center;
+
+            gap:
+                15px;
+
+            margin-bottom:
+                45px;
+        }
+
+
+        .red-social {
+
+            width:
+                54px;
+
+            height:
+                54px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            border:
+                1px solid #292929;
+
+            border-radius:
+                50%;
+
+            background:
+                #0d0d0d;
+
+            transition:
+                all var(--transicion);
+        }
+
+
+        .red-social img {
+
+            width:
+                25px;
+
+            height:
+                25px;
+
+            object-fit:
+                contain;
+        }
+
+
+        .red-social:hover {
+
+            border-color:
+                var(--dorado);
+
+            transform:
+                translateY(-5px);
+
+            box-shadow:
+                0 10px 25px rgba(201, 162, 39, .18);
+        }
+
+
+        .footer-linea {
+
+            max-width:
+                900px;
+
+            height:
+                1px;
+
+            margin:
+                0 auto 25px;
+
+            background:
+                #191919;
+        }
+
+
+        footer p {
+
+            color:
+                #666;
+
+            font-size:
+                11px;
+        }
+
+
+        /* =====================================================
+           WHATSAPP
+        ===================================================== */
+
+        .whatsapp-flotante {
+
+            position:
+                fixed;
+
+            right:
+                22px;
+
+            bottom:
+                22px;
+
+            width:
+                58px;
+
+            height:
+                58px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            background:
+                #25D366;
+
+            color:
+                white;
+
+            border-radius:
+                50%;
+
+            font-size:
+                25px;
+
+            z-index:
+                1500;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, .45);
+
+            transition:
+                transform var(--transicion);
+        }
+
+
+        .whatsapp-flotante:hover {
+
+            transform:
+                scale(1.08);
+        }
+
+
+        /* =====================================================
+           GALERIA
+        ===================================================== */
+
+        .galeria-modal {
+
+            position:
+                fixed;
+
+            inset:
+                0;
+
+            background:
+                rgba(0, 0, 0, .96);
+
+            z-index:
+                2000;
+
+            display:
+                none;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            padding:
+                30px;
+        }
+
+
+        .galeria-modal.activa {
+
+            display:
+                flex;
+        }
+
+
+        .galeria-contenido {
+
+            width:
+                min(1100px, 100%);
+        }
+
+
+        .galeria-principal {
+
+            position:
+                relative;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            height:
+                70vh;
+
+            background:
+                #000;
+
+            border:
+                1px solid #222;
+        }
+
+
+        .galeria-principal img {
+
+            max-width:
+                90%;
+
+            max-height:
+                90%;
+
+            object-fit:
+                contain;
+        }
+
+
+        .galeria-cerrar {
+
+            position:
+                absolute;
+
+            top:
+                15px;
+
+            right:
+                20px;
+
+            border:
+                none;
+
+            background:
+                transparent;
+
+            color:
+                white;
+
+            font-size:
+                35px;
+
+            cursor:
+                pointer;
+
+            z-index:
+                10;
+        }
+
+
+        .galeria-flecha {
+
+            position:
+                absolute;
+
+            top:
+                50%;
+
+            transform:
+                translateY(-50%);
+
+            width:
+                50px;
+
+            height:
+                50px;
+
+            border-radius:
+                50%;
+
+            border:
+                1px solid var(--dorado);
+
+            background:
+                rgba(0, 0, 0, .75);
+
+            color:
+                white;
+
+            cursor:
+                pointer;
+
+            font-size:
+                25px;
+
+            z-index:
+                5;
+
+            transition:
+                background var(--transicion);
+        }
+
+
+        .galeria-flecha:hover {
+
+            background:
+                var(--dorado);
+
+            color:
+                #000;
+        }
+
+
+        .galeria-flecha.izquierda {
+
+            left:
+                20px;
+        }
+
+
+        .galeria-flecha.derecha {
+
+            right:
+                20px;
+        }
+
+
+        .galeria-miniaturas {
+
+            display:
+                flex;
+
+            gap:
+                10px;
+
+            overflow-x:
+                auto;
+
+            padding:
+                15px 0;
+        }
+
+
+        .galeria-miniaturas img {
+
+            width:
+                80px;
+
+            height:
+                60px;
+
+            object-fit:
+                cover;
+
+            cursor:
+                pointer;
+
+            border:
+                2px solid transparent;
+
+            opacity:
+                .6;
+
+            transition:
+                all var(--transicion);
+        }
+
+
+        .galeria-miniaturas img.activa {
+
+            border-color:
+                var(--dorado);
+
+            opacity:
+                1;
+        }
+
+
+        .galeria-info {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                space-between;
+
+            gap:
+                20px;
+
+            margin-top:
+                15px;
+        }
+
+
+        .galeria-info h3 {
+
+            font-size:
+                24px;
+        }
+
+
+        .galeria-whatsapp {
+
+            padding:
+                13px 20px;
+
+            background:
+                #25D366;
+
+            color:
+                white;
+
+            font-size:
+                12px;
+
+            font-weight:
+                bold;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 950px) {
+
+            .ventajas-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+
+            .marcas-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 800px) {
+
+            header {
+
+                min-height:
+                    auto;
+
+                padding:
+                    17px 5%;
+
+                flex-direction:
+                    column;
+
+                gap:
+                    15px;
+            }
+
+
+            nav {
+
+                gap:
+                    16px;
+
+                flex-wrap:
+                    wrap;
+
+                justify-content:
+                    center;
+            }
+
+
+            .hero {
+
+                min-height:
+                    80vh;
+
+                padding:
+                    70px 5%;
+            }
+
+
+            .hero h1 {
+
+                letter-spacing:
+                    -2px;
+            }
+
+
+            .galeria-info {
+
+                flex-direction:
+                    column;
+
+                align-items:
+                    stretch;
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            .hero {
+
+                min-height:
+                    78vh;
+            }
+
+
+            .hero h1 {
+
+                font-size:
+                    47px;
+            }
+
+
+            .hero p {
+
+                font-size:
+                    15px;
+            }
+
+
+            .video-presentacion {
+
+                padding:
+                    55px 5%;
+            }
+
+
+            .video-presentacion video {
+
+                border-radius:
+                    8px;
+            }
+
+
+            .ventajas {
+
+                padding:
+                    70px 5%;
+            }
+
+
+            .ventajas-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .inventario {
+
+                padding:
+                    75px 5%;
+            }
+
+
+            .vehiculos-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .marcas-grid {
+
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
+
+            .detalles {
+
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
+
+            .nosotros {
+
+                padding:
+                    75px 5%;
+            }
+
+
+            .contacto {
+
+                padding:
+                    70px 5%;
+            }
+
+
+            .galeria-modal {
+
+                padding:
+                    10px;
+            }
+
+
+            .galeria-principal {
+
+                height:
+                    60vh;
+            }
+
+
+            .galeria-flecha {
+
+                width:
+                    42px;
+
+                height:
+                    42px;
+            }
+
+
+            footer {
+
+                padding:
+                    55px 5% 25px;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ===================================================== -->
+
+    <header>
+
+        <a href="#inicio" class="logo">
+
+            <img src="img/Logo BCG.png" alt="BCG AUTOSALES">
+
+        </a>
+
+
+        <nav>
+
+            <a href="#inicio">
+                Inicio
+            </a>
+
+            <a href="#inventario">
+                Vehículos
+            </a>
+
+            <a href="#marcas">
+                Marcas
+            </a>
+
+            <a href="#nosotros">
+                Nosotros
+            </a>
+
+            <a href="#contacto">
+                Contacto
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =====================================================
+         HERO
+    ===================================================== -->
+
+    <section class="hero" id="inicio">
+
+        <div class="hero-content">
+
+            <small>
+                Exclusividad y confianza
+            </small>
+
+
+            <h1>
+
+                Encuentra el vehículo
+
+                <span>
+                    que mereces
+                </span>
+
+            </h1>
+
+
+            <p>
+
+                Descubre nuestra selección de vehículos,
+                cuidadosamente elegidos para ofrecerte
+                calidad, estilo y confianza.
+
+            </p>
+
+
+            <a href="#inventario" class="hero-button">
+
+                EXPLORAR VEHÍCULOS →
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         VIDEO
+    ===================================================== -->
+
+    <section class="video-presentacion">
+
+        <div class="video-contenedor">
+
+            <div class="video-titulo">
+
+                <small>
+                    BCG AUTOSALES
+                </small>
+
+
+                <h2>
+
+                    CONOCE
+
+                    <span>
+                        NUESTRA EXPERIENCIA
+                    </span>
+
+                </h2>
+
+
+                <p>
+
+                    Calidad, confianza y exclusividad
+                    en cada vehículo.
+
+                </p>
+
+            </div>
+
+
+            <!--
+                TU VIDEO VA AQUÍ:
+
+                video/video-bcg.mp4
+            -->
+
+            <video controls autoplay muted playsinline preload="metadata">
+
+                <source src="videO/brayson.mp4" type="video/mp4">
+
+                Tu navegador no puede reproducir este video.
+
+            </video>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         VENTAJAS
+    ===================================================== -->
+
+    <section class="ventajas">
+
+        <div class="seccion-titulo">
+
+            <small>
+                BCG AUTOSALES
+            </small>
+
+
+            <h2>
+                ¿POR QUÉ ELEGIRNOS?
+            </h2>
+
+
+            <p>
+
+                Trabajamos para que encontrar tu próximo
+                vehículo sea una experiencia diferente.
+
+            </p>
+
+        </div>
+
+
+        <div class="ventajas-grid">
+
+
+            <div class="ventaja">
+
+                <div class="ventaja-icono">
+                    ★
+                </div>
+
+                <h3>
+                    Calidad
+                </h3>
+
+                <p>
+                    Vehículos seleccionados pensando
+                    en nuestros clientes.
+                </p>
+
+            </div>
+
+
+            <div class="ventaja">
+
+                <div class="ventaja-icono">
+                    ✓
+                </div>
+
+                <h3>
+                    Confianza
+                </h3>
+
+                <p>
+                    Atención transparente durante
+                    todo el proceso.
+                </p>
+
+            </div>
+
+
+            <div class="ventaja">
+
+                <div class="ventaja-icono">
+                    ◆
+                </div>
+
+                <h3>
+                    Exclusividad
+                </h3>
+
+                <p>
+                    Una selección pensada para quienes
+                    buscan algo diferente.
+                </p>
+
+            </div>
+
+
+            <div class="ventaja">
+
+                <div class="ventaja-icono">
+                    ↗
+                </div>
+
+                <h3>
+                    Atención
+                </h3>
+
+                <p>
+                    Te acompañamos para encontrar
+                    el vehículo adecuado.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         INVENTARIO
+    ===================================================== -->
+
+    <section class="inventario" id="inventario">
+
+
+        <div class="seccion-titulo">
+
+            <small>
+                Nuestro inventario
+            </small>
+
+
+            <h2>
+                VEHÍCULOS
+            </h2>
+
+
+            <p>
+
+                Encuentra el vehículo ideal para ti.
+
+            </p>
+
+        </div>
+
+
+        <div class="filtros">
+
+
+            <button class="filtro activo" onclick="filtrar('Todos', this)">
+
+                Todos
+
+            </button>
+
+
+            <button class="filtro" onclick="filtrar('Carros', this)">
+
+                Carros
+
+            </button>
+
+
+            <button class="filtro" onclick="filtrar('Motos', this)">
+
+                Motos
+
+            </button>
+
+
+            <button class="filtro" onclick="filtrar('Camionetas', this)">
+
+                Camionetas
+
+            </button>
+
+
+            <button class="filtro" onclick="filtrar('Camiones', this)">
+
+                Camiones
+
+            </button>
+
+        </div>
+
+
+        <div class="vehiculos-grid" id="lista-vehiculos">
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         MARCAS
+    ===================================================== -->
+
+    <section class="marcas" id="marcas">
+
+
+        <div class="seccion-titulo">
+
+            <small>
+                Marcas
+            </small>
+
+
+            <h2>
+                TRABAJAMOS CON LAS MEJORES
+            </h2>
+
+
+            <p>
+
+                Una selección de marcas reconocidas
+                para diferentes necesidades y estilos.
+
+            </p>
+
+        </div>
+
+
+        <div class="marcas-grid">
+
+
+            <div class="marca">
+                BMW
+            </div>
+
+            <div class="marca">
+                Mercedes-Benz
+            </div>
+
+            <div class="marca">
+                Audi
+            </div>
+
+            <div class="marca">
+                Toyota
+            </div>
+
+            <div class="marca">
+                Ford
+            </div>
+
+            <div class="marca">
+                Hyundai
+            </div>
+
+            <div class="marca">
+                Chevrolet
+            </div>
+
+            <div class="marca">
+                Mazda
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         NOSOTROS
+    ===================================================== -->
+
+    <section class="nosotros" id="nosotros">
+
+
+        <div class="nosotros-contenido">
+
+
+            <div class="seccion-titulo">
+
+                <small>
+                    Conócenos
+                </small>
+
+
+                <h2>
+
+                    SOBRE
+
+                    <span>
+                        BCG AUTOSALES
+                    </span>
+
+                </h2>
+
+            </div>
+
+
+            <p>
+
+                En BCG AUTOSALES trabajamos para ofrecer
+                vehículos seleccionados con altos estándares
+                de calidad, buscando brindar una experiencia
+                de compra segura, transparente y exclusiva.
+
+                Nuestro objetivo es acompañarte durante
+                el proceso para que encuentres un vehículo
+                que se adapte a tus necesidades y expectativas.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACTO
+    ===================================================== -->
+
+    <section class="contacto" id="contacto">
+
+
+        <div class="seccion-titulo">
+
+            <small>
+                Hablemos
+            </small>
+
+
+            <h2>
+                ¿BUSCAS UN VEHÍCULO?
+            </h2>
+
+
+            <p>
+
+                Contáctanos y te ayudaremos a encontrar
+                la opción ideal.
+
+            </p>
+
+        </div>
+
+
+        <a class="hero-button" href="https://wa.me/NUMERO_WHATSAPP" target="_blank">
+
+            CONTACTAR POR WHATSAPP →
+
+        </a>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER + REDES SOCIALES
+    ===================================================== -->
+
+    <footer>
+
+
+        <div class="footer-logo">
+
+            <img src="img/Logo BCG.png" alt="BCG AUTOSALES">
+
+        </div>
+
+
+        <p class="footer-frase">
+
+            EXCLUSIVIDAD · CONFIANZA · CALIDAD
+
+        </p>
+
+
+        <div class="redes-titulo">
+
+            Síguenos en nuestras redes
+
+        </div>
+
+
+        <div class="redes-sociales">
+
+
+            <!-- ==============================
+                 TIKTOK
+
+                 Cuando tengas el logo:
+
+                 img/redes/tiktok.png
+            ============================== -->
+
+            <a class="red-social" href="#" target="_blank" aria-label="TikTok">
+
+                <img src="img/redes/tiktok.png" alt="TikTok">
+
+            </a>
+
+
+            <!-- ==============================
+                 INSTAGRAM
+            ============================== -->
+
+            <a class="red-social" href="#" target="_blank" aria-label="Instagram">
+
+                <img src="img/redes/insta.png" alt="Instagram">
+
+            </a>
+
+
+            <!-- ==============================
+                 FACEBOOK
+            ============================== -->
+
+            <a class="red-social" href="#" target="_blank" aria-label="Facebook">
+
+                <img src="img/redes/facebook.png" alt="Facebook">
+
+            </a>
+
+        </div>
+
+
+        <div class="footer-linea"></div>
+
+
+        <p>
+
+            © 2026 BCG AUTOSALES.
+            Todos los derechos reservados.
+
+        </p>
+
+    </footer>
+
+
+    <!-- =====================================================
+         WHATSAPP FLOTANTE
+    ===================================================== -->
+
+    <a href="https://wa.me/NUMERO_WHATSAPP" target="_blank" class="whatsapp-flotante">
+
+        ☎
+
+    </a>
+
+
+    <!-- =====================================================
+         GALERIA
+    ===================================================== -->
+
+    <div class="galeria-modal" id="galeriaModal">
+
+
+        <div class="galeria-contenido">
+
+
+            <div class="galeria-principal">
+
+
+                <button class="galeria-cerrar" onclick="cerrarGaleria()">
+
+                    ×
+
+                </button>
+
+
+                <button class="galeria-flecha izquierda" onclick="fotoAnterior()">
+
+                    ‹
+
+                </button>
+
+
+                <img id="imagenGaleria" src="" alt="Vehículo">
+
+
+                <button class="galeria-flecha derecha" onclick="fotoSiguiente()">
+
+                    ›
+
+                </button>
+
+            </div>
+
+
+            <div class="galeria-miniaturas" id="miniaturas">
+
+            </div>
+
+
+            <div class="galeria-info">
+
+
+                <h3 id="nombreGaleria">
+                </h3>
+
+
+                <a id="whatsappGaleria" class="galeria-whatsapp" href="#" target="_blank">
+
+                    CONSULTAR POR WHATSAPP
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
+    <script>
+
+
+        /* =====================================================
+           CONFIGURACIÓN
+        ===================================================== */
+
+        const NUMERO_WHATSAPP =
+            "NUMERO_WHATSAPP";
+
+
+        /* =====================================================
+           VEHÍCULOS
+        ===================================================== */
+
+        const vehiculos = [
+
+
+            {
+                nombre: "BMW X3",
+
+                tipo: "Carros",
+
+                precio: 6.495,
+
+                imagenes: [
+
+                    "img/bmw x3 2016/foto1.jpeg",
+                    "img/bmw x3 2016/foto2.jpeg",
+                    "img/bmw x3 2016/foto3.jpeg",
+                    "img/bmw x3 2016/foto4.jpeg",
+                    "img/bmw x3 2016/foto5.jpeg",
+                    "img/bmw x3 2016/foto6.jpeg",
+                    "img/bmw x3 2016/foto7.jpeg",
+                    "img/bmw x3 2016/foto8.jpeg",
+                    "img/bmw x3 2016/foto9.jpeg"
+
+                ],
+
+                ciudad: "Cali",
+
+                kilometraje: "152.000 MI",
+
+                anio: "2016",
+
+                combustible: "Gasolina",
+
+                transmision: "Automático"
+
+            },
+
+
+            {
+                nombre: "Ford Fusion",
+
+                tipo: "Carros",
+
+                precio: 5.995,
+
+                imagenes: [
+
+                    "img/Ford fusion/foto1.jpeg",
+                    "img/Ford fusion/foto2.jpeg",
+                    "img/Ford fusion/foto3.jpeg",
+                    "img/Ford fusion/foto4.jpeg",
+                    "img/Ford fusion/foto5.jpeg",
+                    "img/Ford fusion/foto6.jpeg",
+                    "img/Ford fusion/foto7.jpeg",
+                    "img/Ford fusion/foto8.jpeg"
+
+                ],
+
+                ciudad: "Medellín",
+
+                kilometraje: "132.000 MI",
+
+                anio: "2017",
+
+                combustible: "Gasolina",
+
+                transmision: "Manual"
+
+            },
+
+
+            {
+                nombre: "Hyundai Kona",
+
+                tipo: "Camionetas",
+
+                precio: 6.495,
+
+                imagenes: [
+
+                    "img/hyundai/foto1.jpeg",
+                    "img/hyundai/foto2.jpeg",
+                    "img/hyundai/foto3.jpeg",
+                    "img/hyundai/foto4.jpeg",
+                    "img/hyundai/foto5.jpeg",
+                    "img/hyundai/foto6.jpeg",
+                    "img/hyundai/foto7.jpeg",
+                    "img/hyundai/foto8.jpeg",
+                    "img/hyundai/foto9.jpeg",
+                    "img/hyundai/foto10.jpeg",
+                    "img/hyundai/foto11.jpeg",
+                    "img/hyundai/foto12.jpeg"
+
+                ],
+
+                ciudad: "Bogotá",
+
+                kilometraje: "107.000 MI",
+
+                anio: "2018",
+
+                combustible: "Gasolina",
+
+                transmision: "Manual"
+
+            }
+
+        ];
+
+
+        /* =====================================================
+           MOSTRAR VEHÍCULOS
+        ===================================================== */
+
+        const contenedor =
+            document.getElementById("lista-vehiculos");
+
+
+        function mostrarVehiculos(tipo = "Todos") {
+
+            contenedor.innerHTML = "";
+
+
+            const filtrados =
+                tipo === "Todos"
+                    ? vehiculos
+                    : vehiculos.filter(
+                        v => v.tipo === tipo
+                    );
+
+
+            filtrados.forEach(vehiculo => {
+
+
+                const indice =
+                    vehiculos.indexOf(vehiculo);
+
+
+                const fotos =
+                    vehiculo.imagenes ||
+                    [vehiculo.imagen];
+
+
+                const precio =
+                    "US$ " +
+                    vehiculo.precio.toLocaleString("en-US");
+
+
+                const mensaje =
+                    encodeURIComponent(
+
+                        `Hola, estoy interesado en el ${vehiculo.nombre}. ¿Me pueden dar más información?`
+
+                    );
+
+
+                const tarjeta =
+                    document.createElement("article");
+
+
+                tarjeta.className =
+                    "vehiculo-card";
+
+
+                tarjeta.innerHTML = `
+
+                    <div
+                        class="vehiculo-imagen-contenedor"
+                        onclick="abrirGaleria(${indice})">
+
+                        <img
+                            class="vehiculo-foto"
+                            src="${fotos[0]}"
+                            alt="${vehiculo.nombre}"
+                            loading="lazy"
+                            onerror="imagenNoEncontrada(this)">
+
+                        <span class="contador-fotos">
+
+                            📷 ${fotos.length} fotos
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="vehiculo-info">
+
+
+                        <span class="vehiculo-tipo">
+
+                            ${vehiculo.tipo}
+
+                        </span>
+
+
+                        <h3
+                            title="${vehiculo.nombre}">
+
+                            ${vehiculo.nombre}
+
+                        </h3>
+
+
+                        <div class="precio">
+
+                            ${precio}
+
+                        </div>
+
+
+                        <div class="detalles">
+
+
+                            <span>
+                                📍 ${vehiculo.ciudad}
+                            </span>
+
+
+                            <span>
+                                🛣 ${vehiculo.kilometraje}
+                            </span>
+
+
+                            <span>
+                                📅 ${vehiculo.anio}
+                            </span>
+
+
+                            <span>
+                                ⛽ ${vehiculo.combustible}
+                            </span>
+
+
+                            <span>
+                                ⚙ ${vehiculo.transmision}
+                            </span>
+
+
+                            <span>
+                                🔢 Placa ${vehiculo.placa}
+                            </span>
+
+
+                        </div>
+
+
+                        <a
+                            class="consultar"
+                            href="https://wa.me/${NUMERO_WHATSAPP}?text=${mensaje}"
+                            target="_blank"
+                            rel="noopener">
+
+                            CONSULTAR POR WHATSAPP →
+
+                        </a>
+
+                    </div>
+
+                `;
+
+
+                contenedor.appendChild(
+                    tarjeta
+                );
+
+            });
+
+
+            if (filtrados.length === 0) {
+
+                contenedor.innerHTML = `
+
+                    <p class="sin-resultados">
+
+                        No hay vehículos disponibles
+                        en esta categoría.
+
+                    </p>
+
+                `;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           FILTROS
+        ===================================================== */
+
+        function filtrar(tipo, boton) {
+
+
+            document
+                .querySelectorAll(".filtro")
+                .forEach(b => {
+
+                    b.classList.remove(
+                        "activo"
+                    );
+
+                });
+
+
+            boton.classList.add(
+                "activo"
+            );
+
+
+            mostrarVehiculos(tipo);
+
+        }
+
+
+        /* =====================================================
+           GALERIA
+        ===================================================== */
+
+        let vehiculoActual = 0;
+
+        let fotoActual = 0;
+
+
+        const modal =
+            document.getElementById(
+                "galeriaModal"
+            );
+
+
+        const imagenGaleria =
+            document.getElementById(
+                "imagenGaleria"
+            );
+
+
+        const miniaturas =
+            document.getElementById(
+                "miniaturas"
+            );
+
+
+        const nombreGaleria =
+            document.getElementById(
+                "nombreGaleria"
+            );
+
+
+        const whatsappGaleria =
+            document.getElementById(
+                "whatsappGaleria"
+            );
+
+
+        function abrirGaleria(indice) {
+
+
+            vehiculoActual =
+                indice;
+
+
+            fotoActual =
+                0;
+
+
+            actualizarGaleria();
+
+
+            modal.classList.add(
+                "activa"
+            );
+
+
+            document.body.style.overflow =
+                "hidden";
+
+        }
+
+
+        function cerrarGaleria() {
+
+
+            modal.classList.remove(
+                "activa"
+            );
+
+
+            document.body.style.overflow =
+                "";
+
+        }
+
+
+        function actualizarGaleria() {
+
+
+            const vehiculo =
+                vehiculos[
+                vehiculoActual
+                ];
+
+
+            const fotos =
+                vehiculo.imagenes ||
+                [vehiculo.imagen];
+
+
+            imagenGaleria.src =
+                fotos[fotoActual];
+
+
+            imagenGaleria.alt =
+                vehiculo.nombre;
+
+
+            nombreGaleria.textContent =
+                vehiculo.nombre;
+
+
+            const mensaje =
+                encodeURIComponent(
+
+                    `Hola, estoy interesado en el ${vehiculo.nombre}. ¿Me pueden dar más información?`
+
+                );
+
+
+            whatsappGaleria.href =
+                `https://wa.me/${NUMERO_WHATSAPP}?text=${mensaje}`;
+
+
+            miniaturas.innerHTML =
+                "";
+
+
+            fotos.forEach(
+                (foto, indice) => {
+
+
+                    const img =
+                        document.createElement(
+                            "img"
+                        );
+
+
+                    img.src =
+                        foto;
+
+
+                    img.alt =
+                        `${vehiculo.nombre} foto ${indice + 1}`;
+
+
+                    if (
+                        indice ===
+                        fotoActual
+                    ) {
+
+                        img.classList.add(
+                            "activa"
+                        );
+
+                    }
+
+
+                    img.onclick = () => {
+
+                        fotoActual =
+                            indice;
+
+                        actualizarGaleria();
+
+                    };
+
+
+                    miniaturas.appendChild(
+                        img
+                    );
+
+                }
+            );
+
+        }
+
+
+        function fotoAnterior() {
+
+
+            const vehiculo =
+                vehiculos[
+                vehiculoActual
+                ];
+
+
+            const fotos =
+                vehiculo.imagenes ||
+                [vehiculo.imagen];
+
+
+            fotoActual--;
+
+
+            if (
+                fotoActual < 0
+            ) {
+
+                fotoActual =
+                    fotos.length - 1;
+
+            }
+
+
+            actualizarGaleria();
+
+        }
+
+
+        function fotoSiguiente() {
+
+
+            const vehiculo =
+                vehiculos[
+                vehiculoActual
+                ];
+
+
+            const fotos =
+                vehiculo.imagenes ||
+                [vehiculo.imagen];
+
+
+            fotoActual++;
+
+
+            if (
+                fotoActual >=
+                fotos.length
+            ) {
+
+                fotoActual =
+                    0;
+
+            }
+
+
+            actualizarGaleria();
+
+        }
+
+
+        /* =====================================================
+           TECLADO
+        ===================================================== */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+
+                if (
+                    !modal.classList.contains(
+                        "activa"
+                    )
+                ) {
+
+                    return;
+
+                }
+
+
+                if (
+                    event.key ===
+                    "Escape"
+                ) {
+
+                    cerrarGaleria();
+
+                }
+
+
+                if (
+                    event.key ===
+                    "ArrowLeft"
+                ) {
+
+                    fotoAnterior();
+
+                }
+
+
+                if (
+                    event.key ===
+                    "ArrowRight"
+                ) {
+
+                    fotoSiguiente();
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           CERRAR MODAL
+        ===================================================== */
+
+        modal.addEventListener(
+            "click",
+            function (event) {
+
+
+                if (
+                    event.target ===
+                    modal
+                ) {
+
+                    cerrarGaleria();
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           IMAGEN NO ENCONTRADA
+        ===================================================== */
+
+        function imagenNoEncontrada(
+            imagen
+        ) {
+
+            imagen.style.display =
+                "none";
+
+        }
+
+
+        /* =====================================================
+           INICIAR
+        ===================================================== */
+
+        mostrarVehiculos();
+
+    </script>
+
+</body>
+
+</html>
